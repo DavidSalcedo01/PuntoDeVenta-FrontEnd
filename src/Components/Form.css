@@ -1,0 +1,58 @@
+body{
+    background: #1E1E24;
+}
+
+.divForm{
+    height: 60dvh;
+    width: 55vw;
+    border-radius: 1em;
+    background: #111D4A;
+}
+
+
+h1{
+    color: #FFCF99;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+}
+
+label{
+    font-size: 1em;
+    color: #FFCF99;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+input{
+    width: 50%;
+    height: 1.7em;
+    border-radius: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.3em;
+    background: #FFF8F0;
+    color: #111D4A;
+    font-size: 1.2em;
+    border: none;
+
+}
+
+#btn_submit{
+    width: 30%;
+    height: 1.7em;
+    border-radius: 0.3em;
+    background: red;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    margin-top: 2em;
+}
