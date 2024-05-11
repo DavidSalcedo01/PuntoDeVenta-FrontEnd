@@ -9,6 +9,26 @@ body{
     background: #111D4A;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th {
+    background-color: #000000;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #000000;
+  }
 
 h1{
     color: #FFCF99;
