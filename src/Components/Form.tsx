@@ -1,5 +1,6 @@
 import "./Form.css"
 import {useEffect, useState} from "react"
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = "http://localhost:3010/"
 
@@ -13,6 +14,7 @@ function Form(){
     const [password, setPassword] = useState<string>("")
     const [user, setUser] = useState<any>(null)
     const [product, setProduct] = useState<any>(null)
+    const navigate = useNavigate();
 
     useEffect(() => {
         const userInStorageString = window.localStorage.getItem("user")
@@ -22,6 +24,12 @@ function Form(){
             fetchBicycles()
         }
     }, [])
+
+    useEffect(() =>{
+        if(user?.token) {
+            fetchBicycles()
+        }
+    }, [user?.token])
 
     const handleInputChange = (stateUpdate: (arg0: any) => void) => {
         return (event: { target: { value: any } }) => {
@@ -49,6 +57,7 @@ function Form(){
                 const data = await response.json()
                 setUser(data)
                 window.localStorage.setItem("user", JSON.stringify(data))
+                navigate('/landigPage');
             }
             else{
                 alert("Correo electrónico o contraseña incorrectos")
@@ -85,28 +94,6 @@ function Form(){
 
     return(
         <>
-            {
-                user && product && (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {product && product.map((item: any) => (
-                                <tr key={item._id}>
-                                    <td>{item._id}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.description}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                )
-            }
             <div className="divForm">
                 <form onSubmit={handleSubmit}>
                     <h1>LogIn</h1>

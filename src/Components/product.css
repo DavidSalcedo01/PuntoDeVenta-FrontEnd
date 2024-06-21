@@ -1,0 +1,17 @@
+body{
+    background: #1E1E24;
+}
+
+.products{
+    height: 100%;
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background: #111D4A;
+    border-radius: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
